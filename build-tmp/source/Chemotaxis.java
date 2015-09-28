@@ -31,7 +31,6 @@ public void draw()
  	background((int)(chaser.length/5),255-(int)(chaser.length/5),0);
  	for(int j=0; j<chaser.length; j++)
  	{
- 		chaser[j].move();
  		for(int b=0;b<chaser.length;b++){
  			if(chaser[j].touching(b)==true && j!=b){
  				chaser[j].myX+=highRandom();
@@ -45,6 +44,7 @@ public void draw()
  				chaser[j].bactSize+=3;
  			}
  		}
+ 		chaser[j].move();
  		chaser[j].show();
  	}
  	strokeWeight(30);
@@ -67,14 +67,14 @@ public void draw()
  		bactSize=15;
  	}
  	public void move(){
- 		if(myX<130)
- 			myX=myX+20;
- 		if(myX>870)
- 			myX=myX-20;
- 		if(myY<130)
- 			myY=myY+20;
- 		if(myY>870)
- 			myY=myY-20;
+ 		if(myX<120+(bactSize/2))
+ 			myX=120+(bactSize/2);
+ 		if(myX>880-(bactSize/2))
+ 			myX=880-(bactSize/2);
+ 		if(myY<120+(bactSize/2))
+ 			myY=120+(bactSize/2);
+ 		if(myY>880-(bactSize/2))
+ 			myY=880-(bactSize/2);
  		if(mouseX>myX)
  			myX=myX+((int)(Math.random()*9))-3;
  		else
