@@ -85,6 +85,7 @@ public void draw()
  			myY=myY+((int)(Math.random()*9))-5;
  	}
  	public void show(){
+ 		stroke(randomColor());
  		strokeWeight(2);
  		fill(bactColor);
  		ellipse(myX,myY,bactSize,bactSize);
